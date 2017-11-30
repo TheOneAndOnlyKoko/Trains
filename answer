@@ -1,0 +1,136 @@
+1.  Define the function of a constructor. [2]
+
+    A constructor is method used to initialize an instance of a class and is specific to that class.
+
+2. Outline the advantages of polymorphism, using the RollingStock class as an example. [3]
+
+    Polymorphism in Object Oriented Programming is the concept that an object can be two classes simultaneously
+    through inheritance. In the case of RolllingStock, it is the superclass of Wagon because it "extends" RollingStock.
+    This means that it inherits its methods and instance variable and if you want to inherit the parameters of the
+    constructor you need to use the function "super(parameter1, parameter2);".
+
+3. Construct a unified modelling language (UML) diagram of the Train class. [3]
+
+    https://docs.google.com/a/berkeley.net/drawings/d/1seRmYzXVU7vXOjqV82YNImjqE4DhNlush95XnFul8rY/edit?usp=sharing
+
+4. Construct a method getNumberOfWagons(), part of the Train class, that returns the
+number of wagons currently coupled to the train. [2]
+
+    See Wagon.java
+
+5. Construct the removeWagon() method that will remove one wagon from a train and
+return the removed object. Include appropriate error checking. [5]
+
+    See Train.java
+
+6. Outline one advantage of using standard library collections. [2]
+
+    Provides a framework for organizing your data that is reusable.
+
+7. Describe two ways in which programming by a team differs from programming by an
+individual working alone. [4]
+
+    When programming with a team you only work with your section of the code and don't have access to other sections.
+    It helps in team programming to use geters and seters so there is a seperation between the variables used by a different
+    teams and allows teams to change the name of variables without affecting the other team.
+
+8.  State the appropriate data type to be used in the Address class to store
+    (i) the street name; [1]
+        String
+    (ii) the building number; [1]
+        int
+    (iii) an indication of whether or not this is a business address. [1]
+        boolean
+
+9. Identify the changes to the Parcel class that will be needed to make use of the new
+Address class. [3]
+
+    See Address.java and Parcel.java
+
+10. Outline how these two new classes can be created with minimal duplication of code. [3]
+
+    By having an Address class and having origin and destination "extend" it.
+
+11. Consider the following code fragment.
+
+    Train A = new Train(123);
+    Engine B = new Engine(7);
+    A.addEngine(B);
+    Wagon C = new Wagon(23);
+    A.addWagon(C);
+    Wagon D = new Wagon(66);
+    A.addWagon(D);
+    Wagon E = new Wagon(71);
+    A.addWagon(E);
+    A.addEngine(new Engine(9));
+
+    (i) Draw the mEngines array after the code fragment has been executed. [2]
+        [B, Engine(9)]
+    (ii) State the value of mEngineCount after the code fragment has been executed. [1]
+        2
+    (iii) Draw the mWagons array after both the code fragment above and the code fragment
+    below have been executed. [2]
+        [C, D, E]
+
+    Wagon F = A.removeWagon();
+    F = A.removeWagon();
+    A.addWagon(new Wagon(214));
+
+    The parcels loaded into a wagon cannot weigh more than the capacity of the wagon. A train’s
+    engines must have enough combined power to pull the loaded wagons. The company needs to
+    be able to check that these requirements are being met.
+
+12. Construct the getWeight() method in the Wagon class that returns the total combined
+weight of the parcels currently in the wagon and the wagon itself. [4]
+
+    See Wagon.java
+
+13. Construct the getWeight() method in the Train class that returns the total combined
+weight of all the parcels, engines and wagons in a train. [4]
+
+    See Train.java
+
+14. Explain why having a getWeight() method in both the Train and Wagon classes
+does not cause a compiler error, even though the Train class does not inherit from the
+RollingStock class. [2]
+
+    It does not fail because it is calling the getWeight() function from an instance so the function is
+    specific to the class.
+
+The static array used to store Wagon objects in the Train class is to be replaced by a linked list
+of Wagon objects.
+
+15. Without writing detailed code, identify the changes that will need to be made. [3]
+
+    You would need to initialize mWagons as an linked list and change addWagons() method to add objects
+    to linked list instead of a static array.
+
+16. Without the use of library functions, construct the addWagon() method in the Train
+class to add a Wagon object at the beginning of the linked list. [3]
+
+    See Train.java
+
+17. Describe how a method to remove a particular wagon would be implemented. [5]
+
+    Use the remove() function on the mWagon linked list to remove at a given index.
+
+The wagons have a single door so the first parcel loaded into a wagon is the last one to
+be unloaded.
+
+18. Identify a dynamic abstract data structure that would be appropriate to model the storage
+of parcels in a wagon. [1]
+
+    Linked list because it has a function to remove items from the end of the list.
+
+19. The Wagon class has been modified to include an object named model which is an instance
+of the abstract data structure identified in (d). Construct code for the following methods
+in the Wagon class using this new object.
+    (i) addParcel() [2]
+        see Wagon.java
+    (ii) getParcel() [2]
+        seeWagon.java
+    (f) Explain the importance of style and naming conventions in code. [4]
+        This helps organize the code and maintain clarity. Keeping conisistent variable names helps you group them effecitively
+        and know which variables it is associated with. Keeping method names consistent with its function helps you know its method\
+        in the future. Conventions help you work in groups so that everybody is familiar with the naming system when you create a new
+        variable or method.
